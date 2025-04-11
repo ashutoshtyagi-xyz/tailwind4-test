@@ -1,6 +1,9 @@
-do pnpm i
+install packages
+```
+pnpm i
+```
 
-then
-```bash
+start storybook
+```
 pnpm run storybook
 ```
