@@ -44,7 +44,7 @@
             "browserTarget": "tailx:build",
             "compodoc": false,
             "port": 6006,
-            "styles": ["./projects/tailx/src/styles.scss"]
+            "styles": ["./projects/tailx/src/styles.css"]
           }
         },
         "build-storybook": {
@@ -54,7 +54,7 @@
             "browserTarget": "tailx:build",
             "compodoc": false,
             "outputDir": "storybook-static",
-            "styles": ["./projects/tailx/src/styles.scss"]
+            "styles": ["./projects/tailx/src/styles.css"]
           }
         }
       }
