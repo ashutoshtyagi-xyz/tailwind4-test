@@ -6,23 +6,23 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "tailx": {
+    "dsx": {
       "projectType": "library",
-      "root": "projects/tailx",
-      "sourceRoot": "projects/tailx/src",
+      "root": "projects/dsx",
+      "sourceRoot": "projects/dsx/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/tailx/ng-package.json"
+            "project": "projects/dsx/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/tailx/tsconfig.lib.prod.json"
+              "tsConfig": "projects/dsx/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/tailx/tsconfig.lib.json"
+              "tsConfig": "projects/dsx/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -30,7 +30,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/tailx/tsconfig.spec.json",
+            "tsConfig": "projects/dsx/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -40,21 +40,33 @@
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
-            "configDir": "projects/tailx/.storybook",
-            "browserTarget": "tailx:build",
-            "compodoc": false,
+            "configDir": "projects/dsx/.storybook",
+            "browserTarget": "dsx:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/dsx"
+            ],
             "port": 6006,
-            "styles": ["./projects/tailx/src/styles.css"]
+            "styles": ["./projects/dsx/src/styles.css"]
           }
         },
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
-            "configDir": "projects/tailx/.storybook",
-            "browserTarget": "tailx:build",
-            "compodoc": false,
+            "configDir": "projects/dsx/.storybook",
+            "browserTarget": "dsx:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/dsx"
+            ],
             "outputDir": "storybook-static",
-            "styles": ["./projects/tailx/src/styles.css"]
+            "styles": ["./projects/dsx/src/styles.css"]
           }
         }
       }
